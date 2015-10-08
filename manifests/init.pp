@@ -10,6 +10,15 @@ class client (){
     install_options => ['--allow-unauthenticated', '-f'],
   }
 
+  file { "/etc/network/interfaces":
+    ensure  => present,
+    source  => "puppet:///modules/${module_name}/interfaces",
+  } ->
+  file { "/etc/wpa_supplicant/wpa_supplicant.conf":
+    ensure  => present,
+    source  => "puppet:///modules/${module_name}/wpa_supplicant.conf",
+  }
+
   file { "/usr/share/backgrounds/devoxx4kids_wallpaper.png":
     ensure  => present,
     source  => "puppet:///modules/${module_name}/devoxx4kids_wallpaper.png",
