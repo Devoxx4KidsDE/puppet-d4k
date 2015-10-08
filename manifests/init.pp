@@ -36,6 +36,6 @@ class client (){
     source  => "puppet:///modules/${module_name}/change_hostname.sh",
     owner   => 'pi',
     group   => 'pi',
-    mode    => 0644,
+    mode    => '0644',
   }
 }
