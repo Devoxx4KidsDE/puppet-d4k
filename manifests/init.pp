@@ -38,4 +38,12 @@ class client (){
     group   => 'pi',
     mode    => '0644',
   }
+
+  file { "/home/pi/add_puppet_master.sh":
+    ensure  => present,
+    source  => "puppet:///modules/${module_name}/add_puppet_master.sh",
+    owner   => 'pi',
+    group   => 'pi',
+    mode    => '0644',
+  }
 }
