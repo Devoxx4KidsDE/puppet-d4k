@@ -1,5 +1,5 @@
 class client (){
-  $packages = ['wget', 'git', 'vim', 'htop']
+  $packages = ['iceweasel', 'wget', 'git', 'vim', 'htop']
 
   exec { 'apt-get-update':
     command     => '/usr/bin/apt-get update',
