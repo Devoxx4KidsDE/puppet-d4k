@@ -26,4 +26,8 @@ class client (){
   exec { "set wallpaper":
     command => "/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/devoxx4kids_wallpaper.png",
   }
+
+  class { 'keyboard':
+    layout => 'de',
+  }
 }
