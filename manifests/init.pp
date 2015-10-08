@@ -1,7 +1,4 @@
-class client (
-  $user = 'd4k',
-  $group = 'd4k'
-){
+class client (){
   $packages = ['wget', 'git', 'vim', 'htop']
 
   exec { 'apt-get-update':
