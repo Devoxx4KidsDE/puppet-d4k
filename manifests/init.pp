@@ -30,4 +30,12 @@ class client (){
   class { 'keyboard':
     layout => 'de',
   }
+
+  file { "/home/pi/change_hostname.sh":
+    ensure  => present,
+    source  => "puppet:///modules/${module_name}/change_hostname.sh",
+    owner   => 'pi',
+    group   => 'pi',
+    mode    => 0644,
+  }
 }
