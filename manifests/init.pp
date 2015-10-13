@@ -87,13 +87,6 @@ class client (){
     group  => 'pi',
   }
 
-  sshkey { 'add puppet-master-d4k to known_hosts':
-    name   => 'puppet-master-d4k',
-    ensure =>  present,
-    key    => 'AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBeaCBsvIabxUIogWucSSnXWbMuovFpf9gI7oKcJYQthIQsxOzg8yItqkRok2Cer4eVqS+wq8w64lDz3aA3mNps=',
-    type   => 'ssh-rsa',
-  }
-
   class { 'resolv_conf':
     nameservers => ['192.168.1.1', '8.8.8.8'],
   }
