@@ -19,23 +19,24 @@ class client (){
     source  => "puppet:///modules/${module_name}/wpa_supplicant.conf",
   }
 
-  file { "/usr/share/backgrounds/":
+  file { '/usr/share/backgrounds/':
     ensure => "directory",
     mode   => '0751',
   } ->
-  file { "/usr/share/backgrounds/devoxx4kids_wallpaper.png":
+  file { '/usr/share/backgrounds/devoxx4kids_wallpaper.png':
     ensure  => present,
     source  => "puppet:///modules/${module_name}/devoxx4kids_wallpaper.png",
   } ->
-  exec { "set wallpaper":
-    command => "/usr/bin/gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/devoxx4kids_wallpaper.png",
+  file { '/etc/alternatives/desktop-background':
+   ensure => 'link',
+   target => '/usr/share/backgrounds/devoxx4kids_wallpaper.png',
   }
 
   class { 'keyboard':
     layout => 'de',
   }
 
-  file { "/home/pi/change_hostname.sh":
+  file { '/home/pi/change_hostname.sh':
     ensure  => present,
     source  => "puppet:///modules/${module_name}/change_hostname.sh",
     owner   => 'pi',
@@ -43,7 +44,7 @@ class client (){
     mode    => '0644',
   }
 
-  file { "/home/pi/add_puppet_master.sh":
+  file { '/home/pi/add_puppet_master.sh':
     ensure  => present,
     source  => "puppet:///modules/${module_name}/add_puppet_master.sh",
     owner   => 'pi',
