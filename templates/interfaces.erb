@@ -19,7 +19,6 @@ iface eth0 inet dhcp
 auto wlan0
 allow-hotplug wlan0
 iface wlan0 inet static
-a[/[aeiou](.)\1/]
 address 192.168.1.<%= @ip_tail %>
 network 255.255.255.0
 gateway 192.168.1.1
