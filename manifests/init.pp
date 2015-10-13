@@ -19,6 +19,9 @@ class client (){
     source  => "puppet:///modules/${module_name}/wpa_supplicant.conf",
   }
 
+  file { "/usr/share/backgrounds/":
+    ensure  => present,
+  } ->
   file { "/usr/share/backgrounds/devoxx4kids_wallpaper.png":
     ensure  => present,
     source  => "puppet:///modules/${module_name}/devoxx4kids_wallpaper.png",
