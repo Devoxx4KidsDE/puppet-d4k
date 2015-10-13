@@ -59,13 +59,7 @@ class client (){
     group  => 'pi',
     mode   => '0644',
   }
-
-  file { '/home/pi':
-    ensure => 'directory',
-    owner  => 'pi',
-    group  => 'pi',
-    mode   => '0751',
-  } ->
+  
   file { '/home/pi/workshops':
     ensure => 'directory',
     owner  => 'pi',
