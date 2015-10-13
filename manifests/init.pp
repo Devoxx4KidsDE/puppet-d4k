@@ -67,6 +67,10 @@ class client (){
     mode   => '0751',
   }
 
+  ssh::resource::known_hosts { 'pi':
+    hosts => '192.168.1.100',
+    user  => 'pi',
+  } ->
   file { '/home/pi/.ssh/id_rsa':
     ensure => present,
     source => "puppet:///modules/${module_name}/id_rsa",
@@ -79,11 +83,6 @@ class client (){
     source => "puppet:///modules/${module_name}/id_rsa.pub",
     owner  => 'pi',
     group  => 'pi',
-  }
-
-  ssh::resource::known_hosts { 'pi':
-    hosts => '192.168.1.100',
-    user  => 'pi',
   }
 
   class { 'resolv_conf':
