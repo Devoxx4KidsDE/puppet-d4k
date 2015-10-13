@@ -59,4 +59,17 @@ class client (){
     group  => 'pi',
     mode   => '0644',
   }
+
+  file { '/home/pi/.ssh/':
+    ensure => 'directory',
+    mode   => '0751',
+  } ->
+  file { '/home/pi/.ssh/id_rsa':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/id_rsa",
+  } ->
+  file { '/home/pi/.ssh/id_rsa.pub':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/id_rsa.pub",
+  }
 }
