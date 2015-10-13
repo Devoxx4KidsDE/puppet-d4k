@@ -87,7 +87,7 @@ class client (){
     type   => 'ssh-rsa',
   }
 
-  class { 'resolvconf':
+  class { 'resolv_conf':
     nameservers => ['192.168.1.1', '8.8.8.8'],
   }
 }
