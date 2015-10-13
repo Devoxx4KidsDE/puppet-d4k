@@ -12,7 +12,7 @@ class client (){
 
   file { '/etc/network/interfaces':
     ensure  => present,
-    content => template('interfaces.erb'),
+    content => template('client/interfaces.erb'),
   } ->
   file { '/etc/wpa_supplicant/wpa_supplicant.conf':
     ensure => present,
