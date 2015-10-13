@@ -60,6 +60,19 @@ class client (){
     mode   => '0644',
   }
 
+  file { '/home/pi/d4k':
+    ensure => 'directory',
+    owner  => 'pi',
+    group  => 'pi',
+    mode   => '0751',
+  } ->
+  file { '/home/pi/d4k/workshops':
+    ensure => 'directory',
+    owner  => 'pi',
+    group  => 'pi',
+    mode   => '0751',
+  }
+
   file { '/home/pi/.ssh/':
     ensure => 'directory',
     mode   => '0751',
@@ -71,5 +84,12 @@ class client (){
   file { '/home/pi/.ssh/id_rsa.pub':
     ensure => present,
     source => "puppet:///modules/${module_name}/id_rsa.pub",
+  }
+
+  sshkey { 'add puppet-master-d4k to known_hosts':
+    name   => 'puppet-master-d4k',
+    ensure =>  present,
+    key    => 'AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBeaCBsvIabxUIogWucSSnXWbMuovFpf9gI7oKcJYQthIQsxOzg8yItqkRok2Cer4eVqS+wq8w64lDz3aA3mNps=',
+    type   => 'ssh-rsa',
   }
 }
