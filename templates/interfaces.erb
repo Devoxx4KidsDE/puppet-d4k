@@ -1,10 +1,10 @@
 <%
    $ip_tail = 101
    if @hostname =~ /^d4k-\d+$/
-     if $0.length == 1
-       $ip_tail = 10 + $0
-     elsif $0.length == 2
-       $ip_tail = 1 + $0
+     if $1.length == 1
+       $ip_tail = 10 + $1
+     elsif $1.length == 2
+       $ip_tail = 1 + $1
      end
    end
 -%>
