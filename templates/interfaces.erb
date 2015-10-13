@@ -4,9 +4,9 @@
      number = $1
      unless number.nil?
        if number.length == 1
-         $ip_tail = 10 + number
+         $ip_tail = '10' + number
        elsif number.length == 2
-         $ip_tail = 1 + number
+         $ip_tail = '1' + number
        end
      end
    end
