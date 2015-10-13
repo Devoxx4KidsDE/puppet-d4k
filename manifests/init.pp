@@ -51,4 +51,12 @@ class client (){
     group  => 'pi',
     mode   => '0755',
   }
+
+  file { '/home/pi/.bashrc':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/.bashrc",
+    owner  => 'pi',
+    group  => 'pi',
+    mode   => '0644',
+  }
 }
