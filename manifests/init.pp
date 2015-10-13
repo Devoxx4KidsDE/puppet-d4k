@@ -87,6 +87,11 @@ class client (){
     group  => 'pi',
   }
 
+  ssh::resource::known_hosts { 'pi':
+    hosts => '192.168.1.100',
+    user  => 'pi',
+  }
+
   class { 'resolv_conf':
     nameservers => ['192.168.1.1', '8.8.8.8'],
   }
