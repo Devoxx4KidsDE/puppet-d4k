@@ -1,12 +1,11 @@
-<%
-$ip = 101
-if @hostname =~ /^d4k-\d+$/ 
-  if $1.length == 1 
-    $ip = 10 + $1
-  else if $1.length == 2 
-    $ip = 1 + $1
-%>
-
+<% $ip_tail = 101 -%>
+<% if @hostname =~ /^d4k-\d+$/ -%>
+    <% if $1.length == 1 -%>
+        <% $ip_tail = 10 + $1 -%>
+    <% elsif $1.length == 2 -%>
+        <% $ip_tail = 1 + $1 -%>
+    <% end -%>
+<% end -%>
 # Please note that this file is written to be used with dhcpcd.
 # For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'.
 
@@ -21,7 +20,7 @@ auto wlan0
 allow-hotplug wlan0
 iface wlan0 inet static
 a[/[aeiou](.)\1/]
-address 192.168.1.<%= @IP %>
+address 192.168.1.<%= @ip_tail %>
 network 255.255.255.0
 gateway 192.168.1.1
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
