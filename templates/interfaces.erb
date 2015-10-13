@@ -1,16 +1,14 @@
 <%
    $ip_tail = 200
-   if ($number = @hostname.match(/^d4k-\d+$/).captures)
-     if $number.length == 1
-       $ip_tail = 10 + $number
-     elsif $number.length == 2
-       $ip_tail = 1 + $number
+   if @hostname =~ /^d4k-\d+$/
+     number = $1
+     if number.length == 1
+       $ip_tail = 10 + number
+     elsif number.length == 2
+       $ip_tail = 1 + number
      end
    end
 -%>
-
-<%= $number %>
-<%= @hostname %>
 # Please note that this file is written to be used with dhcpcd.
 # For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'.
 
