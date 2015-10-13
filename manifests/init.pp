@@ -70,14 +70,20 @@ class client (){
   file { '/home/pi/.ssh/':
     ensure => 'directory',
     mode   => '0751',
+    owner  => 'pi',
+    group  => 'pi',
   } ->
   file { '/home/pi/.ssh/id_rsa':
     ensure => present,
     source => "puppet:///modules/${module_name}/id_rsa",
+    owner  => 'pi',
+    group  => 'pi',
   } ->
   file { '/home/pi/.ssh/id_rsa.pub':
     ensure => present,
     source => "puppet:///modules/${module_name}/id_rsa.pub",
+    owner  => 'pi',
+    group  => 'pi',
   }
 
   sshkey { 'add puppet-master-d4k to known_hosts':
