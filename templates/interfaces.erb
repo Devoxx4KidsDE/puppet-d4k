@@ -1,11 +1,10 @@
 <%
 $ip = 101
-if @hostname =~ /^d4k-\d+$/ {
-  if $1.length == 1
+if @hostname =~ /^d4k-\d+$/ 
+  if $1.length == 1 
     $ip = 10 + $1
-  else if $1.length == 2
+  else if $1.length == 2 
     $ip = 1 + $1
-}
 %>
 
 # Please note that this file is written to be used with dhcpcd.
