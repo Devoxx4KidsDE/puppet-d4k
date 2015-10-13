@@ -1,10 +1,10 @@
 <%
-   $ip_tail = 101
-   if @hostname =~ /^d4k-\d+$/
-     if $1.length == 1
-       $ip_tail = 10 + $1
-     elsif $1.length == 2
-       $ip_tail = 1 + $1
+   $ip_tail = 200
+   if ($number = @hostname.match(/^d4k-\d+$/))
+     if $number.length == 1
+       $ip_tail = 10 + $number
+     elsif $number.length == 2
+       $ip_tail = 1 + $number
      end
    end
 -%>
