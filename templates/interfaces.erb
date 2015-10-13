@@ -1,7 +1,7 @@
 <%
    $ip_tail = 200
    if @hostname =~ /^d4k-\d+$/i
-     number = @hostname.match(/^d4k-\d+$/i).captures
+     number = @hostname.match(/^d4k-(\d+)$/i).captures
      unless number.nil?
        if number.length == 1
          $ip_tail = 10 + number
