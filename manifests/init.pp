@@ -20,7 +20,8 @@ class client (){
   }
 
   file { "/usr/share/backgrounds/":
-    ensure  => present,
+    ensure => "directory",
+    mode   => '0751',
   } ->
   file { "/usr/share/backgrounds/devoxx4kids_wallpaper.png":
     ensure  => present,
