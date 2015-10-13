@@ -78,6 +78,7 @@ class client (){
     source => "puppet:///modules/${module_name}/id_rsa",
     owner  => 'pi',
     group  => 'pi',
+    mode   => '0300',
   } ->
   file { '/home/pi/.ssh/id_rsa.pub':
     ensure => present,
