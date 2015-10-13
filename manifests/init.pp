@@ -59,7 +59,7 @@ class client (){
     group  => 'pi',
     mode   => '0644',
   }
-  
+
   file { '/home/pi/workshops':
     ensure => 'directory',
     owner  => 'pi',
@@ -85,5 +85,9 @@ class client (){
     ensure =>  present,
     key    => 'AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBeaCBsvIabxUIogWucSSnXWbMuovFpf9gI7oKcJYQthIQsxOzg8yItqkRok2Cer4eVqS+wq8w64lDz3aA3mNps=',
     type   => 'ssh-rsa',
+  }
+
+  class { 'resolv_conf':
+    nameservers => ['192.168.1.1', '8.8.8.8'],
   }
 }
