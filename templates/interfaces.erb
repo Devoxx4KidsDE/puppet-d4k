@@ -30,3 +30,11 @@ network 255.255.255.0
 gateway 192.168.1.1
 wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 dns-nameservers 192.168.1.1
+
+auto wlan1
+allow-hotplug wlan1
+iface wlan1 inet static
+address 192.168.2.<%= $ip_tail %>
+network 255.255.255.0
+gateway 192.168.2.1
+wpa-conf /etc/wpa_supplicant/wpa_supplicant1.conf

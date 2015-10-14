@@ -13,10 +13,21 @@ class client (){
   file { '/etc/network/interfaces':
     ensure  => present,
     content => template('client/interfaces.erb'),
-  } ->
+  }
   file { '/etc/wpa_supplicant/wpa_supplicant.conf':
     ensure => present,
     source => "puppet:///modules/${module_name}/wpa_supplicant.conf",
+  }
+  file { '/etc/wpa_supplicant/wpa_supplicant1.conf':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/wpa_supplicant1.conf",
+  }
+  file { '/home/pi/Desktop/wpa_gui_wlan1.sh':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/wpa_gui_wlan1.sh",
+    owner  => 'pi',
+    group  => 'pi',
+    mode   => '0755',
   }
 
   file { '/usr/share/backgrounds/':
