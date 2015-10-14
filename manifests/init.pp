@@ -85,10 +85,6 @@ class client (){
     group  => 'pi',
   }
 
-  class { 'resolv_conf':
-    nameservers => ['192.168.1.1', '8.8.8.8'],
-  }
-
   file { '/etc/systemd/system/default.target':
     ensure => 'link',
     target => '/lib/systemd/system/graphical.target',
