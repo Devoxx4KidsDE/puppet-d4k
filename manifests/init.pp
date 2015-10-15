@@ -90,6 +90,13 @@ class client (){
     source => "puppet:///modules/${module_name}/id_rsa.pub",
     owner  => 'pi',
     group  => 'pi',
+  } ->
+  file { '/home/pi/.ssh/authorized_keys':
+    ensure => present,
+    source => "puppet:///modules/${module_name}/authorized_keys",
+    owner  => 'pi',
+    group  => 'pi',
+    mode   => '0600',
   }
 
   file { '/etc/systemd/system/default.target':
