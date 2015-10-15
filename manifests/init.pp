@@ -30,17 +30,13 @@ class client (){
     mode   => '0755',
   }
 
-  file { '/usr/share/backgrounds/':
-    ensure => 'directory',
-    mode   => '0751',
-  } ->
-  file { '/usr/share/backgrounds/devoxx4kids_wallpaper.png':
+  file { '/usr/share/images/desktop-base/devoxx4kids_wallpaper.png':
     ensure => present,
     source => "puppet:///modules/${module_name}/devoxx4kids_wallpaper.png",
   } ->
   file { '/etc/alternatives/desktop-background':
     ensure => 'link',
-    target => '/usr/share/backgrounds/devoxx4kids_wallpaper.png',
+    target => '/usr/share/images/desktop-base/devoxx4kids_wallpaper.png',
   }
 
   class { 'keyboard':
