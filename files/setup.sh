@@ -31,7 +31,6 @@ echo ">> Please enter your desired [d4k-$number] hostname postfix number: "
     /usr/bin/sudo sed -i "s/$EXISTING_HOSTNAME/$HOSTNAME/g" /etc/hosts
     /usr/bin/sudo sed -i "s/$EXISTING_HOSTNAME/$HOSTNAME/g" /etc/hostname
 
-echo
 echo ">> New hostname is: $HOSTNAME"
 echo
 
