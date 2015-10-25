@@ -6,6 +6,8 @@
 clear
 
 # Add Puppet Master
+echo "## Configuring Puppet Master ##"
+echo
 DEFAULT_HOSTNAME=puppet-master-d4k
 read -p ">> Please enter the puppet master hostname [$DEFAULT_HOSTNAME]: " HOSTNAME
 HOSTNAME=${HOSTNAME:-$DEFAULT_HOSTNAME}
@@ -16,13 +18,13 @@ IP=${IP:-$DEFAULT_IP}
 
 echo "$IP   $HOSTNAME" | /usr/bin/sudo tee -a /etc/hosts
 /usr/bin/sudo sed -i "/\[main\]/a server=$HOSTNAME" /etc/puppet/puppet.conf
-
-EXISTING_HOSTNAME=$(cat /etc/hostname)
-echo ">> Existing hostname is: $EXISTING_HOSTNAME"
+echo
 echo
 
-
 # Change Hostname
+echo "## Configuring Hostname ##"
+EXISTING_HOSTNAME=$(cat /etc/hostname)
+echo ">> Hostname is: $EXISTING_HOSTNAME"
 echo ">> Please enter your desired [d4k-$number] hostname postfix number: "
   read hostname_postfix_number
     HOSTNAME="d4k-"$hostname_postfix_number
