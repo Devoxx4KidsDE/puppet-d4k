@@ -12,7 +12,7 @@ class d4k::client {
 
   file { '/etc/network/interfaces':
     ensure  => present,
-    content => template('client/interfaces.erb'),
+    content => template('d4k/interfaces.erb'),
   }
   file { '/etc/wpa_supplicant/wpa_supplicant.conf':
     ensure => present,
