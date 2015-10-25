@@ -1,4 +1,4 @@
-class d4k::workshop_minecraft {
+class d4k::workshop_minecraft_collect_game {
 
   package { ['minecraft-pi', 'python']:
     ensure          => installed,
