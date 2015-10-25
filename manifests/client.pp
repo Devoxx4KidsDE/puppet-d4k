@@ -121,9 +121,4 @@ class d4k::client {
     line   => 'hdmi_mode=82',
     match  => 'hdmi_mode=',
   }
-  file_line { 'set graphical ram to 256MB':
-    path => '/boot/config.txt',
-    line   => 'gpu_mem=256',
-    match  => '^gpu_mem',
-  }
 }
