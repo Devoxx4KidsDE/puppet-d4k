@@ -1,4 +1,4 @@
-class d4k::workshop::maze_vr {
+class d4k::workshop_maze_vr {
 
   package { 'curl':
     ensure          => installed,

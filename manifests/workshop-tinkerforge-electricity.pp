@@ -1,4 +1,4 @@
-class d4k::workshop::tinkerforge {
+class d4k::workshop_tinkerforge_electricity {
 
   package { ['openjdk-8-jdk', 'maven', 'libusb-1.0-0', 'libudev0', 'pm-utils', 'python', 'python-qt4',
     'python-qt4-gl', 'python-opengl', 'python-serial']:

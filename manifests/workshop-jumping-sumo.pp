@@ -1,4 +1,4 @@
-class d4k::workshop::jumping_sumo {
+class d4k::workshop_jumping_sumo {
 
   package { ['openjdk-8-jdk', 'maven']:
     ensure => installed,
