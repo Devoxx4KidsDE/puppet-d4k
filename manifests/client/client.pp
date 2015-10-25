@@ -96,11 +96,6 @@ class d4k::client {
     target => '/lib/systemd/system/graphical.target',
   }
 
-  file_line { 'set graphical ram to 256MB':
-    path => '/boot/config.txt',
-    line   => 'gpu_mem=256',
-    match  => 'gpu_mem=',
-  }
   file_line { 'set sdtv mode to PAL':
     path => '/boot/config.txt',
     line   => 'sdtv_mode=2',
@@ -124,6 +119,6 @@ class d4k::client {
   file_line { 'set graphical ram to 256MB':
     path => '/boot/config.txt',
     line   => 'gpu_mem=256',
-    match  => '^gpu_mem',
+    match  => 'gpu_mem',
   }
 }
