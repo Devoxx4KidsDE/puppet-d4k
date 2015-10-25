@@ -7,7 +7,7 @@ class d4k::workshop_tinkerforge_electricity {
   }
 
   package { 'openjdk-7-jdk':
-    ensure => "purged"
+    ensure => 'purged'
   }
 
   exec { 'download brick-daemon':
