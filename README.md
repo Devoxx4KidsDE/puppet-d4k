@@ -1,2 +1,4 @@
 # puppet-d4k
 Puppet module with basic information for the clients
+
+This Repo is under construction and should not be used by now.
