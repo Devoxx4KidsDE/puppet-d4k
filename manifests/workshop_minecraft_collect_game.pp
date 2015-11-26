@@ -1,6 +1,10 @@
 class d4k::workshop_minecraft_collect_game {
 
-  ensure_resource('package', ['minecraft-pi', 'python'], { 'ensure' => 'present' })
+  ensure_resource('package', ['minecraft-pi', 'python'],
+    { 'ensure' => 'present',
+      'install_options' => ['--allow-unauthenticated', '-f']
+    },
+  )
 
   vcsrepo { '/home/pi/workshops/workshop-minecraft-modding-raspberry-pi':
     ensure   => latest,
