@@ -1,8 +1,6 @@
 class d4k::workshop_jumping_sumo {
 
-  package { ['openjdk-8-jdk', 'maven']:
-    ensure => installed,
-  }
+  ensure_resource('package', ['openjdk-8-jdk', 'maven'], { 'ensure' => 'present' })
 
   package { 'openjdk-7-jdk':
     ensure => 'purged'
