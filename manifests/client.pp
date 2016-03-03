@@ -97,28 +97,8 @@ class d4k::client {
   }
 
   file_line { 'set graphical ram to 256MB':
-    path => '/boot/config.txt',
-    line   => 'gpu_mem=256',
-    match  => 'gpu_mem=',
-  }
-  file_line { 'set sdtv mode to PAL':
-    path => '/boot/config.txt',
-    line   => 'sdtv_mode=2',
-    match  => 'sdtv_mode=',
-  }
-  file_line { 'set to hdmi mode':
-    path => '/boot/config.txt',
-    line   => 'hdmi_drive=2',
-    match  => 'hdmi_drive=',
-  }
-  file_line { 'set monitor mode to DMT':
-    path => '/boot/config.txt',
-    line   => 'hdmi_group=2',
-    match  => 'hdmi_group=',
-  }
-  file_line { 'set resolution to 1920x1080p @ 60Hz':
-    path => '/boot/config.txt',
-    line   => 'hdmi_mode=82',
-    match  => 'hdmi_mode=',
+    path  => '/boot/config.txt',
+    line  => 'gpu_mem=256',
+    match => 'gpu_mem=',
   }
 }
