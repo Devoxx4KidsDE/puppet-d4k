@@ -3,14 +3,17 @@ class d4k::workshop_tinkerforge_electricity {
   $packages = ['openjdk-8-jdk', 'maven', 'libusb-1.0-0', 'libudev0', 'pm-utils', 'python', 'python-qt4',
     'python-qt4-gl', 'python-opengl', 'python-serial']
   ensure_resource('package', $packages,
-    { 'ensure'          => 'present',
+    {
+      'ensure'          => 'present',
       'install_options' => ['--allow-unauthenticated', '-f']
     },
   )
 
-  package { 'openjdk-7-jdk':
-    ensure => 'purged'
-  }
+  ensure_resource ('package', 'openjdk-7-jdk',
+    {
+      ensure => 'purged'
+    }
+  )
 
   exec { 'download brick-daemon':
     command => '/usr/bin/wget http://download.tinkerforge.com/tools/brickd/linux/brickd_linux_latest_armhf.deb',

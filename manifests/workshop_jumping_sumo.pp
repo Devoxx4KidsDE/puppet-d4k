@@ -6,9 +6,11 @@ class d4k::workshop_jumping_sumo {
     }
   )
 
-  package { 'openjdk-7-jdk':
-    ensure => 'purged'
-  }
+  ensure_resource ('package', 'openjdk-7-jdk',
+    {
+      ensure => 'purged'
+    }
+  )
 
   vcsrepo { '/home/pi/workshops/workshop-jumping-sumo':
     ensure   => latest,
