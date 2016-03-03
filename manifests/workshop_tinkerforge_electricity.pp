@@ -19,9 +19,9 @@ class d4k::workshop_tinkerforge_electricity {
     user    => 'pi',
   } ->
   package { 'install brick-daemon':
-    ensure    => installed,
-    provider  => dpkg,
-    source    => '/home/pi/Downloads/brickd_linux_latest_armhf.deb',
+    ensure   => installed,
+    provider => dpkg,
+    source   => '/home/pi/Downloads/brickd_linux_latest_armhf.deb',
   }
 
   exec { 'download brick-viewer':
