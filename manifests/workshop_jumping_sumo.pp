@@ -24,5 +24,6 @@ class d4k::workshop_jumping_sumo {
     cwd     => '/home/pi/workshops/workshop-jumping-sumo',
     user    => 'pi',
     creates => '/home/pi/workshops/workshop-jumping-sumo/target',
+    timeout => 1800,
   }
 }
