@@ -1,4 +1,4 @@
-class d4k::workshop_minecraft_collect_game {
+class d4k::workshop_minecraft_raspberry {
 
   ensure_resource('package', ['minecraft-pi', 'python'],
     { 'ensure'          => 'present',
