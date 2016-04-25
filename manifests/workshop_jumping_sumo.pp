@@ -18,12 +18,5 @@ class d4k::workshop_jumping_sumo {
     source   => 'git@192.168.1.100:workshop-jumping-sumo',
     revision => 'master',
     user     => 'pi',
-  } ->
-  exec { 'mvn clean package for jumping sumo':
-    command => '/usr/bin/mvn clean package',
-    cwd     => '/home/pi/workshops/workshop-jumping-sumo',
-    user    => 'pi',
-    creates => '/home/pi/workshops/workshop-jumping-sumo/target',
-    timeout => 1800,
   }
 }
