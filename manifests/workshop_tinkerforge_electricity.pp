@@ -43,7 +43,7 @@ class d4k::workshop_tinkerforge_electricity {
     ensure   => present,
     provider => git,
     source   => 'git@192.168.1.100:workshop-tinkerforge-strom',
-    revision => 'master',
+    revision => 'remotes/origin/master',
     user     => 'pi',
   }
 }
