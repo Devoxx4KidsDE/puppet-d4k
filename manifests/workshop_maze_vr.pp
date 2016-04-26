@@ -24,6 +24,6 @@ class d4k::workshop_maze_vr {
     cwd     => '/home/pi/workshops/workshop-maze-vr',
     user    => 'pi',
     creates => '/home/pi/workshops/workshop-maze-vr/node_modules',
-    timeout => 600,
+    timeout => 1800,
   }
 }
