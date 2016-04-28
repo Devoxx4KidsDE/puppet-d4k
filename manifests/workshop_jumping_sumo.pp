@@ -1,12 +1,13 @@
 class d4k::workshop_jumping_sumo {
 
   ensure_resource('package', ['openjdk-8-jdk', 'maven'],
-    { 'ensure'          => 'present',
+    {
+      'ensure'          => 'present',
       'install_options' => ['--allow-unauthenticated', '-f'],
     }
   )
 
-  ensure_resource ('package', 'openjdk-7-jdk',
+  ensure_resource ('package', ['openjdk-7-jdk', 'oracle-java8-jdk'],
     {
       ensure => 'purged'
     }

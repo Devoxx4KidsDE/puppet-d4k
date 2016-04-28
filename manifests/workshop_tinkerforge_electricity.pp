@@ -9,7 +9,7 @@ class d4k::workshop_tinkerforge_electricity {
     },
   )
 
-  ensure_resource ('package', 'openjdk-7-jdk',
+  ensure_resource ('package', ['openjdk-7-jdk', 'oracle-java8-jdk'],
     {
       ensure => 'purged'
     }
