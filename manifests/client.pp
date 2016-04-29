@@ -36,6 +36,7 @@ class d4k::client {
   } ->
   exec { 'change desktop background wallpaper':
     command => '/usr/bin/pcmanfm -w /usr/share/images/desktop-base/devoxx4kids_wallpaper.png --wallpaper-mode=center',
+    user    => 'pi',
   } ->
   exec { 'change desktop background color':
     command => '/bin/sed -i "s/^desktop_bg=.*/desktop_bg=#ffffff/" ~/.config/pcmanfm/LXDE-pi/desktop-items-0.conf',
