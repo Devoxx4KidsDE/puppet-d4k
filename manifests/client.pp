@@ -40,7 +40,7 @@ class d4k::client {
     user        => 'pi',
   } ->
   exec { 'change desktop background color':
-    command => '/bin/sed -i "s/^desktop_bg=.*/desktop_bg=#ffffff/" ~/.config/pcmanfm/LXDE-pi/desktop-items-0.conf',
+    command => '/bin/sed -i "s/^desktop_bg=.*/desktop_bg=#ffffff/" /home/pi/.config/pcmanfm/LXDE-pi/desktop-items-0.conf',
     user    => 'pi',
   }
 
