@@ -35,7 +35,7 @@ class d4k::client {
     source => "puppet:///modules/${module_name}/devoxx4kids_wallpaper.png",
   } ->
   exec { 'change desktop background wallpaper':
-    command => 'export:export DISPLAY=:0.0; /usr/bin/pcmanfm -w /usr/share/images/desktop-base/devoxx4kids_wallpaper.png --wallpaper-mode=center',
+    command => '/usr/bin/pcmanfm -w /usr/share/images/desktop-base/devoxx4kids_wallpaper.png --wallpaper-mode=center',
   } ->
   exec { 'change desktop background color':
     command => '/bin/sed -i "s/^desktop_bg=.*/desktop_bg=#ffffff/" ~/.config/pcmanfm/LXDE-pi/desktop-items-0.conf',
