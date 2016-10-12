@@ -9,7 +9,7 @@ class d4k::workshop_maze_vr {
     creates => '/etc/apt/sources.list.d/nodesource.list'
   } ->
   package { 'nodejs':
-    ensure          => installed,
+    ensure          => latest,
     install_options => ['--allow-unauthenticated', '-f'],
   } ->
   vcsrepo { '/home/pi/workshops/workshop-maze-vr':
