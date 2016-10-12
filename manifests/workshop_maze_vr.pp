@@ -5,7 +5,7 @@ class d4k::workshop_maze_vr {
     install_options => ['--allow-unauthenticated', '-f'],
   } ->
   exec { 'setup node':
-    command => '/usr/bin/curl --silent --location https://deb.nodesource.com/setup_4.x | bash -',
+    command => '/usr/bin/curl --silent --location https://deb.nodesource.com/setup_6.x | bash -',
     creates => '/etc/apt/sources.list.d/nodesource.list'
   } ->
   package { 'nodejs':
