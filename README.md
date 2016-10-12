@@ -7,6 +7,7 @@ Puppet module with basic information for the clients and the workshops
 
 At this point the following workshops are supported:
 * [Jumping Sumo](https://github.com/Devoxx4KidsDE/workshop-jumping-sumo)
+* [Jumping Sumo 4 Scratch](https://github.com/Devoxx4KidsDE/workshop-jumping-sumo-4-scratch)
 * [Maze VR](https://github.com/Devoxx4KidsDE/workshop-maze-vr)
 * [Minecraft](https://github.com/Devoxx4KidsDE/workshop-minecraft-modding-raspberry-pi)
 * [Tinkerforge Electricity](https://github.com/Devoxx4KidsDE/workshop-tinkerforge-strom)
