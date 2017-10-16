@@ -1,6 +1,6 @@
 class d4k::workshop_jumping_sumo_4_scratch {
 
-  ensure_resource('package', ['openjdk-8-jdk', 'maven'],
+  ensure_resource('package', ['openjdk-8-jdk', 'maven', 'scratch'],
     {
       'ensure'          => 'present',
       'install_options' => ['--allow-unauthenticated', '-f'],

@@ -11,3 +11,4 @@ At this point the following workshops are supported:
 * [Maze VR](https://github.com/Devoxx4KidsDE/workshop-maze-vr)
 * [Minecraft](https://github.com/Devoxx4KidsDE/workshop-minecraft-modding-raspberry-pi)
 * [Tinkerforge Electricity](https://github.com/Devoxx4KidsDE/workshop-tinkerforge-strom)
+* [Scratch Halloween](https://github.com/Devoxx4KidsDE/workshop-scratch-halloween)
