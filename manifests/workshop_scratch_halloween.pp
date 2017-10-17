@@ -1,6 +1,6 @@
 class d4k::workshop_scratch_halloween {
 
-  ensure_resource('package', ['scratch'],
+  ensure_resource('package', ['scratch', 'nuscratch'],
     {
       'ensure'          => 'present',
       'install_options' => ['--allow-unauthenticated', '-f'],
